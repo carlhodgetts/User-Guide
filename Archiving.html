@@ -50,22 +50,65 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-							<h1>Cluster Access</h1>
-							<h3>Architecture</h3>
-							<p> The cluster is a high performance computational infrastructure which is comprised of a cluster of individual computers or nodes. Each node serves a specific purpose and in our architecture there are 3 different types of nodes namely, login nodes, master node and worker nodes. In the RHUL cluster, there are 2 login nodes and as the name suggests the login nodes' function is to log on the user to the cluster. There is 1 master node for the sluster which distributes and allocates computational jobs to the 4 worker nodes in the cluster.</p>
+							<h1>Archiving Old Workspace</h1>
 							
-							<span class="image main"><img src="images/cluster_arch.jpg" alt="" /></span>
-
-							<h3>Access through psyclogin</h3>
-							<p> The cluster is a high performance computational infrastructure which is comprised of a cluster of individual computers or nodes. Each node serves a specific purpose and in our architecture there are 3 different types of nodes namely, login nodes, master node and worker nodes. In the RHUL cluster, there are 2 login nodes and as the name suggests the login nodes' function is to log on the user to the cluster. There is 1 master node for the sluster which distributes and allocates computational jobs to the 4 worker nodes in the cluster.</p>
-
-							<h3>Access through psyclogin02</h3>
-							<p> The cluster is a high performance computational infrastructure which is comprised of a cluster of individual computers or nodes. Each node serves a specific purpose and in our architecture there are 3 different types of nodes namely, login nodes, master node and worker nodes. In the RHUL cluster, there are 2 login nodes and as the name suggests the login nodes' function is to log on the user to the cluster. There is 1 master node for the sluster which distributes and allocates computational jobs to the 4 worker nodes in the cluster.</p>
 							
-							<h3>Use of Storage on Cluster</h3>
-							<p> The cluster is a high performance computational infrastructure which is comprised of a cluster of individual computers or nodes. Each node serves a specific purpose and in our architecture there are 3 different types of nodes namely, login nodes, master node and worker nodes. In the RHUL cluster, there are 2 login nodes and as the name suggests the login nodes' function is to log on the user to the cluster. There is 1 master node for the sluster which distributes and allocates computational jobs to the 4 worker nodes in the cluster.</p>
+							<h3>Understanding the folder structure</h3>
+							<p> The archive space is located at /MRIArchive. It's folder structure has been organized similarly to the /MRIWork space. 
+							<br><br>For example:<br><br>
+							
+							The data in folder <code>/MRIWork/MRIWork10/pv/[user_folder]/Old/</code> should be compressed and archived in <code>/MRIArchive/MRIWork10/pv/[user_folder]/Old.tar.gz</code> location as a compressed tarball gzip file. Individuals will have writing permissions to their respective archive folders.
+                            </p>
+							
+							
+							
+							<h3>How to compress the data and archive it</h3>
+							<p> Use the <code>tar cvf</code> and <code>gzip -9</code> commands to achieve highest compression.
 
-					
+							<br><br>For example:<br><br>
+
+                            <code> tar cvf - /MRIWork/MRIWork10/pv/[user_folder]/Old/ | gzip -9 -> /MRIArchive/MRIWork10/pv/[user_folder]/Old.tar.gz</code>
+
+                            </p>
+
+							<h3>Check if the backup has worked</h3>
+							<p> Use the <code>/usr/local/apps/psycapps/Archive_Old_Workspace/Check_Backup_Content.sh</code> script to check whether the backed-up content is same as the original. It is done with the help of file identifiers called <code>md5sums</code>. The script takes 2 inputs (input 1 -> path to the original folder, input 2 -> path to the Tarball archive) and produces a report. For example:</p>
+							
+                            <code>   bash /usr/local/apps/psycapps/Archive_Old_Workspace/Check_Backup_Content.sh /MRIWork/MRIWork10/pv/[user_folder]/Old/ /MRIArchive/MRIWork10/pv/[user_folder]/Old.tar.gz </code>
+
+							<br><br>
+							<p> Check the Backup Report files thus created in <code>/tmp/Backup_Report-XXXXXXXXXX/</code> to check if you have successfully retrieved your backed up data. </p>
+							
+													
+							
+							<h3>Delete the original folder</h3>
+							<p> Please do not forget to remove your original folder. It would not work if you delete it from the GUI, it will just go and sit in the Trash. Use <code>rm -r</code> command for the removal of the directory. Be careful, this above process is non-reversible. Please double check if you have got the backup file properly. One simple way to do this is to check the size of the backup file with the <code>du</code> command.
+							
+							<br><br>For example:<br><br>
+
+                            <code> du -sh /MRIArchive/MRIWork10/pv/[user_folder]/Old.tar.gz</code>							
+							
+							<p>
+							
+							Once you are confident remove the folder like:
+							
+							<br><br>
+
+                            <code> rm -r /MRIWork/MRIWork10/pv/[user_folder]/Old/</code>							
+							
+							</p>
+
+
+
+							<h3>Retrieving the backup</h3>
+							<p> Change directory to where you want to retrieve your backup. Use the <code>tar xzf</code> command to extract it.
+
+							<br><br>For example:<br><br>
+							
+							<code>cd /MRIWork/MRI-Scratch</code><br>
+                            <code>tar xzf /MRIArchive/MRIWork10/pv/[user_folder]/Old.tar.gz</code>
+	
+                            </p>					
 						</div>
 					</div>
 
