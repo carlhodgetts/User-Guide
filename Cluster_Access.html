@@ -41,9 +41,9 @@
 						<ul>
 							<li><a href="index.html">Home</a></li>
 							<li><a href="Cluster_Access.html">Cluster Access</a></li>
+							<li><a href="Archiving.html">Archiving Old Workspace</a></li>
 							<li><a href="Cluster_Access.html">Important Tutorials</a></li>
 							<li><a href="Cluster_Access.html">BIDS Conversion</a></li>
-							<li><a href="Archiving.html">Archiving Old Workspace</a></li>							
 						</ul>
 					</nav>
 					
@@ -57,13 +57,19 @@
 							<span class="image main"><img src="images/cluster_arch.jpg" alt="" /></span>
 
 							<h3>Access through psyclogin</h3>
-							<p> The cluster is a high performance computational infrastructure which is comprised of a cluster of individual computers or nodes. Each node serves a specific purpose and in our architecture there are 3 different types of nodes namely, login nodes, master node and worker nodes. In the RHUL cluster, there are 2 login nodes and as the name suggests the login nodes' function is to log on the user to the cluster. There is 1 master node for the sluster which distributes and allocates computational jobs to the 4 worker nodes in the cluster.</p>
+							<p> The psyclogin node is to be used for cluster access if it is required for GUI (Graphical User Interface) tools on the cluster. This node is provided with high-performance graphics drivers for this. psyclogin can be accessed through Microsoft Windows Remote Desktop Server. This Remote Desktop Server can be accessed directly while operating from a local PC on campus and for off-campus access is granted only through VPN (details of VPN access is provided <b><a href="https://intranet.royalholloway.ac.uk/students/help-support/it-services/access-off-campus/vpn/vpn.aspx">here</a></b>). After connecting to the VPN use the Remote Desktop Connection software (Windows RDP / Ubuntu Remmina) and connect to the Microsoft Windows Remote Desktop Server( server address: <i>prod-mrirdp01.rhul.ac.uk </i>). Use your college ID and password and domain as <i>cc</i> to log on to the WIndows Server. After sucessfully logging on to the RDP server you will find the <i> VNCViewer </i> application for accessing the cluster with GUI and <i> putty </i> application for logging on with command line interface (CLI) using Secure Shell (SSH).</p>
+							
+							
+							<p><B>VNCViewer:</b> Open the <i> VNCViewer </i> app and enter <code>psyclogin.rhul.ac.uk:[VNC_session_number]</code> in the <i>VNC server </i> dropdown box. The <code>[VNC_session_number]</code> is an unique session code that you should have received from the IT team. If you haven't been provided one, please email the psychology IT Team  <a href="mailto:can.keles@rhul.ac.uk">here</a>. After clicking  <i> Connect </i> enter your VNC password and log-on to the cluster.
+                            </p>
+
+							<p><B>Putty:</b> Open the <i> Putty </i> app and enter <code>psyclogin.rhul.ac.uk</code> in the <i>Host Name </i> field. Check if the port is selected to be  <code>[22]</code> and the connection type is <code>SSH</code>. After clicking  <i> Open </i> enter your college ID in the <i>login as: </i>  field and hit <i>Return </i> to be prompted for your password. Once you have entered your password and hit the <i>Return </i> key, It will log you on to the cluster through the CLI. Remember that for additional security, the cursor doesn't move while entering your password in the command prompt.</p>
 
 							<h3>Access through psyclogin02</h3>
 							<p> The cluster is a high performance computational infrastructure which is comprised of a cluster of individual computers or nodes. Each node serves a specific purpose and in our architecture there are 3 different types of nodes namely, login nodes, master node and worker nodes. In the RHUL cluster, there are 2 login nodes and as the name suggests the login nodes' function is to log on the user to the cluster. There is 1 master node for the sluster which distributes and allocates computational jobs to the 4 worker nodes in the cluster.</p>
 							
 							<h3>Use of Storage on Cluster</h3>
-							<p> The cluster is a high performance computational infrastructure which is comprised of a cluster of individual computers or nodes. Each node serves a specific purpose and in our architecture there are 3 different types of nodes namely, login nodes, master node and worker nodes. In the RHUL cluster, there are 2 login nodes and as the name suggests the login nodes' function is to log on the user to the cluster. There is 1 master node for the sluster which distributes and allocates computational jobs to the 4 worker nodes in the cluster.</p>
+							<p> To be added.....</p>
 
 					
 						</div>
